@@ -1,14 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/interfaces/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
   styleUrls: ['./list-products.component.css']
 })
-export class ListProductsComponent {
-  listProducts: Product[] = [
-    { id: 1, name: "Sillón gabardina", description: "Sillón de gabardina de tres cuerpos", price: 100.000, stock: 10 },
-    { id: 2, name: "Sillón de madera", description: "Sillón de madera de tres cuerpos", price: 100.000, stock: 20 },
-  ]
+export class ListProductsComponent implements OnInit {
+  listProducts: Product[] = []
+
+  constructor(private _productService: ProductService) { }
+
+  ngOnInit(): void {
+    this.getListProducts();
+  }
+
+  getListProducts() {
+    try {
+      this._productService.getListProduct().subscribe((data) => {
+        this.listProducts = data;
+      })
+
+    } catch (error) {
+      console.log("Hubo un error" + error);
+    }
+  }
 }
