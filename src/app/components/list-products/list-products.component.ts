@@ -8,7 +8,7 @@ import { Product } from 'src/app/interfaces/product';
 })
 export class ListProductsComponent {
   listProducts: Product[] = [
-    { name: "Sillón gabardina", description: "Sillón de gabardina de tres cuerpos", price: 100.000, stock: 10 },
-    { name: "Sillón de madera", description: "Sillón de madera de tres cuerpos", price: 100.000, stock: 20 },
+    { id: 1, name: "Sillón gabardina", description: "Sillón de gabardina de tres cuerpos", price: 100.000, stock: 10 },
+    { id: 2, name: "Sillón de madera", description: "Sillón de madera de tres cuerpos", price: 100.000, stock: 20 },
   ]
 }

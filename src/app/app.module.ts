@@ -3,9 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+//Components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AddEditProductsComponent } from './components/add-edit-products/add-edit-products.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { AddEditProductsComponent } from './components/add-edit-products/add-edi
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

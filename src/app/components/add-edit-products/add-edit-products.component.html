@@ -1,1 +1,37 @@
-<p>add-edit-products works!</p>
+<div class="row mt-3">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 25rem;">
+            <div class="card-header text-center">Agregar Producto</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addProduct()">
+                    <input formControlName="name" type="text" class="form-control" placeholder="Name">
+                    <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+                        El campo name es requerido.
+                    </span>
+                    <input formControlName="description" type="text" class="form-control mt-2"
+                        placeholder="Description">
+                        <span *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched">
+                            El campo name es requerido.
+                        </span>
+                    <input formControlName="price" type="number" class="form-control mt-2" placeholder="Price">
+                    <span *ngIf="form.get('price')?.hasError('required') && form.get('price')?.touched">
+                        El campo name es requerido.
+                    </span>
+                    <input formControlName="stock" type="number" class="form-control mt-2" placeholder="Stock">
+                    <span *ngIf="form.get('stock')?.hasError('required') && form.get('stock')?.touched">
+                        El campo name es requerido.
+                    </span>
+                    <div class="row mt-4 text-center">
+                        <div class="col-lg-6">
+                            <button [disabled]="form.invalid" routerLinkActive="router-link-active" type="submit"
+                                class="btn btn-success">Accept</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button [routerLink]="['/']" type="button" class="btn btn-info">Return</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

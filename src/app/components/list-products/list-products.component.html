@@ -1,8 +1,11 @@
 <div class="container my-4">
-    <h4>Listado de Productos</h4>
-</div>
 
-<div class="container m-4">
+    <div class="title my-5">
+        <h4>Listado de Productos</h4>
+        <button type="button" class="btn btn-success" [routerLink]="['/add']"
+            routerLinkActive="router-link-active">Agregar Producto</button>
+    </div>
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -16,12 +19,18 @@
         </thead>
 
         <tbody>
-            <tr *ngIf="let product of listProducts" class="table-active">
-                <th scope="row">Active</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>            
+            <tr *ngFor="let product of listProducts" class="table-dark">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.stock}}</td>
+                <td>
+                    <button [routerLink]="['/edit',product.id]" routerLinkActive="router-link-active" type="button"
+                        class="btn btn-info btn-sm mx-2">Edit</button>
+                    <button type="button" class="btn btn-warning btn-sm">Trash</button>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
