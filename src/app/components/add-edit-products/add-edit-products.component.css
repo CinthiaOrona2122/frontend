@@ -1,0 +1,26 @@
+body{
+    height: 200px;
+    display: flex;
+    position: absolute;
+    align-items: flex-end;
+}
+
+input{
+    background-color: darkgray;
+    color: black;
+}
+
+.form-control:focus{
+    background-color: darkgray;
+    color: black;
+}
+
+.form-control::placeholder{
+    color: rgb(102, 96, 96);
+}
+
+input[_ngcontent-ng-c3392585386]{
+    background-color: darkgray;
+    color: black;
+    font-weight: bold;
+}
